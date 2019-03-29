@@ -10,3 +10,14 @@ test "sueldo de Baigorria y de Gimenez" {
 	gimenez.sueldo(12000)
 	assert.equals(12000, gimenez.sueldo())
 }
+
+test "sueldo de Baigorria Acumulado" {
+	baigorria.venderEmpanada()
+	baigorria.venderEmpanada()
+	assert.equals(1530, baigorria.sueldo())
+	baigorria.cobrarSueldo()
+	baigorria.venderEmpanada()
+	assert.equals(1545, baigorria.sueldo())
+	baigorria.cobrarSueldo()
+	assert.equals(3075, baigorria.totalCobrado())
+}
